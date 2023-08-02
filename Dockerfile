@@ -11,9 +11,7 @@ WORKDIR $APP_HOME
 COPY . ./
 
 # Install production dependencies.
-RUN python3 -m pip install --user virtualenv
-RUN python3 -m venv env
-CMD source env/bin/activate
+RUN /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 
